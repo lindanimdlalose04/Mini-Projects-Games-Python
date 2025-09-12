@@ -1,0 +1,44 @@
+#random number game
+import random 
+    
+
+    
+def number_guessing_game():
+    print("Welcome to the Panda Number Guessing Game!")
+    print("You will be required to enter the range of numbers to guess from. ") 
+    print("Are you ready? GOOO!")
+    num1= int(input ("Enter number to start from: "))
+    num2= int(input ("Enter number to stop guessing at: "))
+    print("\nI am thinking of a number between ", num1 ," and ",num2,".....")
+
+    # Generate the random number
+    secret_number = random.randint(num1,num2)
+    attempts = 0
+
+    while True:
+        guess = input("\nEnter your guess: ")
+        
+        try:
+            guess = int(guess)
+        except ValueError:
+            print("Please enter a valid number!(1,2,3... etc)")
+     
+        attempts += 1
+
+        if guess < secret_number:
+            print("Too low! Try again.")
+        elif guess > secret_number:
+            print("Too high! Try again.")
+        else:
+            print(f"Congratulations! You guessed the number {secret_number} in {attempts} attempts.")
+            break
+
+# Main program
+while True:
+    number_guessing_game()
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+    if play_again != "yes":
+        print("Thanks for playing! Goodbye!")
+        break
+
+input("Press Enter to exit...")
