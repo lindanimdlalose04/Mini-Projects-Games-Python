@@ -1,0 +1,20 @@
+{
+    "1234567": {
+        "name": "Alice",
+        "surname": "Smith",
+        "balance": 50000.0,
+        "account": 1234567
+    },
+    "2345678": {
+        "name": "Bob",
+        "surname": "Johnson",
+        "balance": 3000.0,
+        "account": 2345678
+    },
+    "3456789": {
+        "name": "Charlie",
+        "surname": "Brown",
+        "balance": 170000.0,
+        "account": 3456789
+    }
+}
