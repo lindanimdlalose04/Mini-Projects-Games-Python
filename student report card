@@ -1,0 +1,31 @@
+class Student:
+    def __init__(self,name):
+        self.name = name
+        self.subjects = {}  #dictionary
+	
+    def add_subject(self,subject, mark):
+        self.subjects[subject] = mark
+        
+        
+    def calculate_average(self):
+        if len(self.subjects)==0:
+            return 0
+        total = 0 
+        for mark in self.subjects.values():
+            total += mark
+        return total / len(self.subjects)
+        
+    def print_report(self):
+        print("\nReport card for "+self.name)
+        print("-" * 25)
+        for subject, mark in self.subjects.items():
+            print(f"{subject}: {mark}")
+        print(f"Average: {self.calculate_average():.2f}")
+        
+student1 = Student("Lindani")
+
+student1.add_subject("Math", 70)
+student1.add_subject("English", 90)
+student1.add_subject("Economics", 80)
+
+student1.print_report()
